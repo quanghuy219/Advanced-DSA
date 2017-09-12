@@ -65,9 +65,11 @@ void print(int a[], int size) {
 }
 
 int main() {
-	int size = 10;
+	int size = 15;
   	int *a = (int*)malloc(size * sizeof(int));
 	create_array(a,size);
+	//int a[] = {6, 10, 9, 7, 3, 3, 6, 1, 1, 4, 4, -2, -3, -1, -4};
+	//int a[] = {6, 10, 9, 7, 3, 3, 6, 1, 1, 4, 4, 2, 3, 1, 4};
 	print(a,size);
 	printf("\n");
 	sort(a,sizeof(int),0,size-1,compare);
