@@ -75,26 +75,26 @@ void create_array(Jval* a, int size) {
 }
 
 void print(Jval a[], int size) {
-  	for (int i = 0; i < size; i++)
-  	{
-    	printf("%d    ", jval_i(a[i]));
-  	}
-  	printf("\n");
+  for (int i = 0; i < size; i++)
+  {
+    printf("%d    ", jval_i(a[i]));
+  }
+  printf("\n");
 }
 
 int main()
 {	
-	int total = 5;
-	Jval *a = (Jval*)malloc( (total+1) * sizeof(Jval));
-   
-  Jval s = new_jval_i(7);
-
-	create_array(a,total);
-	print(a,total);
-	sort(a, 0, total-1, compare_i);
-  int x = search_gen(a, 0, total-1, s, compare_i);
+  int total = 5;
+  Jval *a = (Jval*)malloc( (total+1) * sizeof(Jval));
+  a[5] = new_jval_i(5);
+  Jval s = new_jval_i(5);
+  
+  create_array(a,total);
+  //print(a,total+1);
+  sort(a, 0, total, compare_i);
+  int x = search_gen(a, 0, total, s, compare_i);
   printf("%d\n",x );
-	//print(a,total);
+  print(a,total);
   return 0;
 }
 
